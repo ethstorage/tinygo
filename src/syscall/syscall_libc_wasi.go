@@ -279,6 +279,17 @@ const (
 	S_IXUSR  = 0x40
 )
 
+const (
+	LOCK_EX = 0x2
+	LOCK_NB = 0x4
+	LOCK_SH = 0x1
+	LOCK_UN = 0x8
+)
+
+func Flock(fd int, how int) (err error) {
+	return nil
+}
+
 // https://github.com/WebAssembly/wasi-libc/blob/main/libc-bottom-half/headers/public/__header_dirent.h
 const (
 	DT_BLK     = __WASI_FILETYPE_BLOCK_DEVICE
@@ -403,8 +414,8 @@ func Getpagesize() int {
 }
 
 type Rlimit struct {
-        Cur uint64
-        Max uint64
+	Cur uint64
+	Max uint64
 }
 
 func Setrlimit(resource int, rlim *Rlimit) error {
