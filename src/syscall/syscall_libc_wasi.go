@@ -290,6 +290,10 @@ func Flock(fd int, how int) (err error) {
 	return nil
 }
 
+func Rename(oldpath, newpath string) error {
+	return nil
+}
+
 // https://github.com/WebAssembly/wasi-libc/blob/main/libc-bottom-half/headers/public/__header_dirent.h
 const (
 	DT_BLK     = __WASI_FILETYPE_BLOCK_DEVICE

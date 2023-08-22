@@ -122,6 +122,10 @@ func Clearenv() (err error) {
 	return ENOSYS
 }
 
+func Rename(oldpath, newpath string) error {
+	return nil
+}
+
 func Environ() []string {
 	env := runtime_envs()
 	envCopy := make([]string, len(env))

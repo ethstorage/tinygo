@@ -127,3 +127,7 @@ func Readlink(name string) (string, error) {
 func tempDir() string {
 	return "/tmp"
 }
+
+func Rename(oldpath, newpath string) error {
+	return ErrNotImplemented
+}
