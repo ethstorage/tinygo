@@ -12,7 +12,7 @@ type __wasi_iovec_t struct {
 	bufLen uint
 }
 
-//go:wasmimport wasi_snapshot_preview1 fd_write
+// //go:wasmimport wasi_snapshot_preview1 fd_write
 func fd_write(id uint32, iovs *__wasi_iovec_t, iovs_len uint, nwritten *uint) (errno uint)
 
 // See:
@@ -84,4 +84,10 @@ func procPin() {
 
 //go:linkname procUnpin sync/atomic.runtime_procUnpin
 func procUnpin() {
+}
+
+//go:linkname finalizeRef syscall/js.finalizeRef
+func finalizeRef(sp int) {
+	// Tinygo should not use this function
+	panic(1)
 }
